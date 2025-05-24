@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1 style="text-align: center;">Social Media</h1>
   <div id="post-creation">
     <form id="post-creation-form">
       <input type="text" name="url" placeholder="Paste your link here" required>
@@ -97,6 +98,7 @@
 
       try {
         const res = (await axios.post(`${host}parse-url`, { url })).data;
+        console.log(res);
         const parser = new DOMParser();
         const doc = parser.parseFromString(res, "text/html");
         const img = doc.querySelector('meta[property="og:image"]')?.content;

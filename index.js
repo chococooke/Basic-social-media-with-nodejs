@@ -29,9 +29,11 @@ app.get("/", (req, res) => {
 app.post("/parse-url", async (req, res) => {
   try {
     const response = await axios.get(req.body.url);
+    console.log(req.body);
+
     res.json(response.data);
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
 });
 
